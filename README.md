@@ -52,3 +52,6 @@ can be used to specify an output file.
 
 Check `dw2md -help` for more information.
 
+## Build Status
+
+https://travis-ci.org/eglimi/dw2md.png
