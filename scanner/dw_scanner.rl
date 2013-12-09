@@ -19,24 +19,26 @@ func parseDoc(data []byte, c chan item) {
 	file_start = '<file'(space [a-zA-Z.]+){0,2}'>';
 
 	main := |*
-	'='{6}     => { c <-item{ts, p, "======", "#",       itemHeading1}  };
-	'='{5}     => { c <-item{ts, p, "=====", "##",       itemHeading2}  };
-	'='{4}     => { c <-item{ts, p, "====", "###",       itemHeading3}  };
-	'='{3}     => { c <-item{ts, p, "===", "####",       itemHeading4}  };
-	'='{2}     => { c <-item{ts, p, "==", "#####",       itemHeading5}  };
-	'**'       => { c <-item{ts, p, "**", "**",          itemBold}      };
-	'//'       => { c <-item{ts, p, "//", "*",           itemItalic}    };
-	'__'       => { c <-item{ts, p, "__", "",            itemUnderline} };
-	'\'\''     => { c <-item{ts, p, "''", "`",           itemMonospace} };
-	#'[['       => { c <-item{ts, p, "[[", "",            itemStartLink} };
-	#']]'       => { c <-item{ts, p, "]]", "",            itemEndLink}   };
-	#'{{'       => { c <-item{ts, p, "{{", "",            itemStartPic}  };
-	#'}}'       => { c <-item{ts, p, "}}", "",            itemEndPic}    };
-	code_start => { c <-item{ts, p, "<code>", "```",     itemStartCode} };
-	'</code>'  => { c <-item{ts, p, "</code>", "```",    itemEndCode}   };
-	file_start => { c <-item{ts, p, "<file>", "```",     itemStartFile} };
-	'</file>'  => { c <-item{ts, p, "</file>", "```",    itemEndFile}   };
-	any        => { c <-item{ts, p, string(data[p]), "", itemText}      };
+	'='{6}     => { c <-item{ts, p, "======", "#",       itemHeading1}    };
+	'='{5}     => { c <-item{ts, p, "=====", "##",       itemHeading2}    };
+	'='{4}     => { c <-item{ts, p, "====", "###",       itemHeading3}    };
+	'='{3}     => { c <-item{ts, p, "===", "####",       itemHeading4}    };
+	'='{2}     => { c <-item{ts, p, "==", "#####",       itemHeading5}    };
+	'**'       => { c <-item{ts, p, "**", "**",          itemBold}        };
+	'//'       => { c <-item{ts, p, "//", "*",           itemItalic}      };
+	'__'       => { c <-item{ts, p, "__", "",            itemUnderline}   };
+	'\'\''     => { c <-item{ts, p, "''", "`",           itemMonospace}   };
+	'<del>'    => { c <-item{ts, p, "<del>", "~~",       itemStartDelete} };
+	'</del>'   => { c <-item{ts, p, "</del>", "~~",      itemEndDelete}   };
+	#'[['       => { c <-item{ts, p, "[[", "",            itemStartLink}   };
+	#']]'       => { c <-item{ts, p, "]]", "",            itemEndLink}     };
+	#'{{'       => { c <-item{ts, p, "{{", "",            itemStartPic}    };
+	#'}}'       => { c <-item{ts, p, "}}", "",            itemEndPic}      };
+	code_start => { c <-item{ts, p, "<code>", "```",     itemStartCode}   };
+	'</code>'  => { c <-item{ts, p, "</code>", "```",    itemEndCode}     };
+	file_start => { c <-item{ts, p, "<file>", "```",     itemStartFile}   };
+	'</file>'  => { c <-item{ts, p, "</file>", "```",    itemEndFile}     };
+	any        => { c <-item{ts, p, string(data[p]), "", itemText}        };
 	*|;
 
 	write data;

@@ -21,33 +21,34 @@ var _dw2md_actions []byte = []byte{
 	1, 4, 1, 5, 1, 6, 1, 7, 
 	1, 8, 1, 9, 1, 10, 1, 11, 
 	1, 12, 1, 13, 1, 14, 1, 15, 
-	1, 16, 1, 17, 1, 18, 
+	1, 16, 1, 17, 1, 18, 1, 19, 
+	1, 20, 
 }
 
 var _dw2md_to_state_actions []byte = []byte{
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 1, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 
+	0, 0, 0, 0, 0, 1, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
 }
 
 var _dw2md_from_state_actions []byte = []byte{
 	0, 0, 0, 0, 0, 0, 0, 0, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 0, 0, 0, 0, 0, 3, 
 	0, 0, 0, 0, 0, 0, 0, 0, 
-	0, 0, 
+	0, 0, 0, 0, 0, 3, 0, 0, 
+	0, 0, 0, 0, 0, 0, 0, 0, 
 }
 
-const dw2md_start int = 23
-const dw2md_first_final int = 23
+const dw2md_start int = 29
+const dw2md_first_final int = 29
 const dw2md_error int = -1
 
-const dw2md_en_main int = 23
+const dw2md_en_main int = 29
 
 
-// line 51 "scanner/dw_scanner.go"
+// line 52 "scanner/dw_scanner.go"
 	{
 	cs = dw2md_start
 	ts = 0
@@ -55,7 +56,7 @@ const dw2md_en_main int = 23
 	act = 0
 	}
 
-// line 59 "scanner/dw_scanner.go"
+// line 60 "scanner/dw_scanner.go"
 	{
 	var _acts int
 	var _nacts uint
@@ -74,338 +75,382 @@ _resume:
 
 ts = p
 
-// line 78 "scanner/dw_scanner.go"
+// line 79 "scanner/dw_scanner.go"
 		}
 	}
 
 	switch cs {
-	case 23:
+	case 29:
 		switch data[p] {
 		case 39:
-			goto tr26;
-		case 42:
-			goto tr27;
-		case 47:
-			goto tr28;
-		case 60:
-			goto tr29;
-		case 61:
-			goto tr30;
-		case 95:
-			goto tr31;
-		}
-		goto tr25;
-	case 24:
-		if data[p] == 39 {
 			goto tr33;
-		}
-		goto tr32;
-	case 25:
-		if data[p] == 42 {
+		case 42:
 			goto tr34;
-		}
-		goto tr32;
-	case 26:
-		if data[p] == 47 {
-			goto tr35;
-		}
-		goto tr32;
-	case 27:
-		switch data[p] {
 		case 47:
+			goto tr35;
+		case 60:
 			goto tr36;
-		case 99:
+		case 61:
 			goto tr37;
-		case 102:
+		case 95:
 			goto tr38;
 		}
 		goto tr32;
+	case 30:
+		if data[p] == 39 {
+			goto tr40;
+		}
+		goto tr39;
+	case 31:
+		if data[p] == 42 {
+			goto tr41;
+		}
+		goto tr39;
+	case 32:
+		if data[p] == 47 {
+			goto tr42;
+		}
+		goto tr39;
+	case 33:
+		switch data[p] {
+		case 47:
+			goto tr43;
+		case 99:
+			goto tr44;
+		case 100:
+			goto tr45;
+		case 102:
+			goto tr46;
+		}
+		goto tr39;
 	case 0:
 		switch data[p] {
 		case 99:
 			goto tr1;
-		case 102:
+		case 100:
 			goto tr2;
+		case 102:
+			goto tr3;
 		}
 		goto tr0;
 	case 1:
 		if data[p] == 111 {
-			goto tr3;
+			goto tr4;
 		}
 		goto tr0;
 	case 2:
 		if data[p] == 100 {
-			goto tr4;
+			goto tr5;
 		}
 		goto tr0;
 	case 3:
 		if data[p] == 101 {
-			goto tr5;
+			goto tr6;
 		}
 		goto tr0;
 	case 4:
 		if data[p] == 62 {
-			goto tr6;
+			goto tr7;
 		}
 		goto tr0;
 	case 5:
-		if data[p] == 105 {
-			goto tr7;
+		if data[p] == 101 {
+			goto tr8;
 		}
 		goto tr0;
 	case 6:
 		if data[p] == 108 {
-			goto tr8;
-		}
-		goto tr0;
-	case 7:
-		if data[p] == 101 {
 			goto tr9;
 		}
 		goto tr0;
-	case 8:
+	case 7:
 		if data[p] == 62 {
 			goto tr10;
 		}
 		goto tr0;
-	case 9:
-		if data[p] == 111 {
+	case 8:
+		if data[p] == 105 {
 			goto tr11;
 		}
 		goto tr0;
-	case 10:
-		if data[p] == 100 {
+	case 9:
+		if data[p] == 108 {
 			goto tr12;
 		}
 		goto tr0;
-	case 11:
+	case 10:
 		if data[p] == 101 {
 			goto tr13;
 		}
 		goto tr0;
-	case 12:
-		switch data[p] {
-		case 32:
-			goto tr14;
-		case 62:
-			goto tr15;
-		}
-		if 9 <= data[p] && data[p] <= 13 {
+	case 11:
+		if data[p] == 62 {
 			goto tr14;
 		}
 		goto tr0;
+	case 12:
+		if data[p] == 111 {
+			goto tr15;
+		}
+		goto tr0;
 	case 13:
-		switch {
-		case data[p] > 90:
-			if 97 <= data[p] && data[p] <= 122 {
-				goto tr16;
-			}
-		case data[p] >= 65:
+		if data[p] == 100 {
 			goto tr16;
 		}
 		goto tr0;
 	case 14:
-		if data[p] == 62 {
-			goto tr15;
-		}
-		switch {
-		case data[p] > 90:
-			if 97 <= data[p] && data[p] <= 122 {
-				goto tr16;
-			}
-		case data[p] >= 65:
-			goto tr16;
-		}
-		goto tr0;
-	case 15:
-		if data[p] == 105 {
+		if data[p] == 101 {
 			goto tr17;
 		}
 		goto tr0;
-	case 16:
-		if data[p] == 108 {
+	case 15:
+		switch data[p] {
+		case 32:
+			goto tr18;
+		case 62:
+			goto tr19;
+		}
+		if 9 <= data[p] && data[p] <= 13 {
 			goto tr18;
 		}
 		goto tr0;
+	case 16:
+		switch {
+		case data[p] > 90:
+			if 97 <= data[p] && data[p] <= 122 {
+				goto tr20;
+			}
+		case data[p] >= 65:
+			goto tr20;
+		}
+		goto tr0;
 	case 17:
-		if data[p] == 101 {
+		if data[p] == 62 {
 			goto tr19;
-		}
-		goto tr0;
-	case 18:
-		switch data[p] {
-		case 32:
-			goto tr20;
-		case 62:
-			goto tr21;
-		}
-		if 9 <= data[p] && data[p] <= 13 {
-			goto tr20;
-		}
-		goto tr0;
-	case 19:
-		if data[p] == 46 {
-			goto tr22;
 		}
 		switch {
 		case data[p] > 90:
 			if 97 <= data[p] && data[p] <= 122 {
-				goto tr22;
+				goto tr20;
 			}
 		case data[p] >= 65:
+			goto tr20;
+		}
+		goto tr0;
+	case 18:
+		if data[p] == 101 {
+			goto tr21;
+		}
+		goto tr0;
+	case 19:
+		if data[p] == 108 {
 			goto tr22;
 		}
 		goto tr0;
 	case 20:
-		switch data[p] {
-		case 32:
+		if data[p] == 62 {
 			goto tr23;
-		case 46:
-			goto tr22;
-		case 62:
-			goto tr21;
-		}
-		switch {
-		case data[p] < 65:
-			if 9 <= data[p] && data[p] <= 13 {
-				goto tr23;
-			}
-		case data[p] > 90:
-			if 97 <= data[p] && data[p] <= 122 {
-				goto tr22;
-			}
-		default:
-			goto tr22;
 		}
 		goto tr0;
 	case 21:
-		if data[p] == 46 {
-			goto tr24;
-		}
-		switch {
-		case data[p] > 90:
-			if 97 <= data[p] && data[p] <= 122 {
-				goto tr24;
-			}
-		case data[p] >= 65:
+		if data[p] == 105 {
 			goto tr24;
 		}
 		goto tr0;
 	case 22:
+		if data[p] == 108 {
+			goto tr25;
+		}
+		goto tr0;
+	case 23:
+		if data[p] == 101 {
+			goto tr26;
+		}
+		goto tr0;
+	case 24:
 		switch data[p] {
-		case 46:
-			goto tr24;
+		case 32:
+			goto tr27;
 		case 62:
-			goto tr21;
+			goto tr28;
+		}
+		if 9 <= data[p] && data[p] <= 13 {
+			goto tr27;
+		}
+		goto tr0;
+	case 25:
+		if data[p] == 46 {
+			goto tr29;
 		}
 		switch {
 		case data[p] > 90:
 			if 97 <= data[p] && data[p] <= 122 {
-				goto tr24;
+				goto tr29;
 			}
 		case data[p] >= 65:
-			goto tr24;
+			goto tr29;
+		}
+		goto tr0;
+	case 26:
+		switch data[p] {
+		case 32:
+			goto tr30;
+		case 46:
+			goto tr29;
+		case 62:
+			goto tr28;
+		}
+		switch {
+		case data[p] < 65:
+			if 9 <= data[p] && data[p] <= 13 {
+				goto tr30;
+			}
+		case data[p] > 90:
+			if 97 <= data[p] && data[p] <= 122 {
+				goto tr29;
+			}
+		default:
+			goto tr29;
+		}
+		goto tr0;
+	case 27:
+		if data[p] == 46 {
+			goto tr31;
+		}
+		switch {
+		case data[p] > 90:
+			if 97 <= data[p] && data[p] <= 122 {
+				goto tr31;
+			}
+		case data[p] >= 65:
+			goto tr31;
 		}
 		goto tr0;
 	case 28:
-		if data[p] == 61 {
-			goto tr39;
+		switch data[p] {
+		case 46:
+			goto tr31;
+		case 62:
+			goto tr28;
 		}
-		goto tr32;
-	case 29:
-		if data[p] == 61 {
-			goto tr41;
+		switch {
+		case data[p] > 90:
+			if 97 <= data[p] && data[p] <= 122 {
+				goto tr31;
+			}
+		case data[p] >= 65:
+			goto tr31;
 		}
-		goto tr40;
-	case 30:
-		if data[p] == 61 {
-			goto tr43;
-		}
-		goto tr42;
-	case 31:
-		if data[p] == 61 {
-			goto tr45;
-		}
-		goto tr44;
-	case 32:
+		goto tr0;
+	case 34:
 		if data[p] == 61 {
 			goto tr47;
 		}
-		goto tr46;
-	case 33:
-		if data[p] == 95 {
-			goto tr48;
+		goto tr39;
+	case 35:
+		if data[p] == 61 {
+			goto tr49;
 		}
-		goto tr32;
+		goto tr48;
+	case 36:
+		if data[p] == 61 {
+			goto tr51;
+		}
+		goto tr50;
+	case 37:
+		if data[p] == 61 {
+			goto tr53;
+		}
+		goto tr52;
+	case 38:
+		if data[p] == 61 {
+			goto tr55;
+		}
+		goto tr54;
+	case 39:
+		if data[p] == 95 {
+			goto tr56;
+		}
+		goto tr39;
 	}
 
-	tr36: cs = 0; goto _again
+	tr43: cs = 0; goto _again
 	tr1: cs = 1; goto _again
-	tr3: cs = 2; goto _again
-	tr4: cs = 3; goto _again
-	tr5: cs = 4; goto _again
+	tr4: cs = 2; goto _again
+	tr5: cs = 3; goto _again
+	tr6: cs = 4; goto _again
 	tr2: cs = 5; goto _again
-	tr7: cs = 6; goto _again
-	tr8: cs = 7; goto _again
-	tr9: cs = 8; goto _again
-	tr37: cs = 9; goto _again
-	tr11: cs = 10; goto _again
-	tr12: cs = 11; goto _again
-	tr13: cs = 12; goto _again
-	tr14: cs = 13; goto _again
+	tr8: cs = 6; goto _again
+	tr9: cs = 7; goto _again
+	tr3: cs = 8; goto _again
+	tr11: cs = 9; goto _again
+	tr12: cs = 10; goto _again
+	tr13: cs = 11; goto _again
+	tr44: cs = 12; goto _again
+	tr15: cs = 13; goto _again
 	tr16: cs = 14; goto _again
-	tr38: cs = 15; goto _again
-	tr17: cs = 16; goto _again
-	tr18: cs = 17; goto _again
-	tr19: cs = 18; goto _again
-	tr20: cs = 19; goto _again
+	tr17: cs = 15; goto _again
+	tr18: cs = 16; goto _again
+	tr20: cs = 17; goto _again
+	tr45: cs = 18; goto _again
+	tr21: cs = 19; goto _again
 	tr22: cs = 20; goto _again
-	tr23: cs = 21; goto _again
+	tr46: cs = 21; goto _again
 	tr24: cs = 22; goto _again
-	tr0: cs = 23; goto f0
-	tr6: cs = 23; goto f1
-	tr10: cs = 23; goto f2
-	tr15: cs = 23; goto f3
-	tr21: cs = 23; goto f4
-	tr25: cs = 23; goto f7
-	tr32: cs = 23; goto f9
-	tr33: cs = 23; goto f10
-	tr34: cs = 23; goto f11
-	tr35: cs = 23; goto f12
-	tr40: cs = 23; goto f13
-	tr42: cs = 23; goto f14
-	tr44: cs = 23; goto f15
-	tr46: cs = 23; goto f16
-	tr47: cs = 23; goto f17
-	tr48: cs = 23; goto f18
+	tr25: cs = 23; goto _again
 	tr26: cs = 24; goto _again
 	tr27: cs = 25; goto _again
-	tr28: cs = 26; goto _again
-	tr29: cs = 27; goto f8
-	tr30: cs = 28; goto _again
-	tr39: cs = 29; goto _again
-	tr41: cs = 30; goto _again
-	tr43: cs = 31; goto _again
-	tr45: cs = 32; goto _again
-	tr31: cs = 33; goto _again
+	tr29: cs = 26; goto _again
+	tr30: cs = 27; goto _again
+	tr31: cs = 28; goto _again
+	tr0: cs = 29; goto f0
+	tr7: cs = 29; goto f1
+	tr10: cs = 29; goto f2
+	tr14: cs = 29; goto f3
+	tr19: cs = 29; goto f4
+	tr23: cs = 29; goto f5
+	tr28: cs = 29; goto f6
+	tr32: cs = 29; goto f9
+	tr39: cs = 29; goto f11
+	tr40: cs = 29; goto f12
+	tr41: cs = 29; goto f13
+	tr42: cs = 29; goto f14
+	tr48: cs = 29; goto f15
+	tr50: cs = 29; goto f16
+	tr52: cs = 29; goto f17
+	tr54: cs = 29; goto f18
+	tr55: cs = 29; goto f19
+	tr56: cs = 29; goto f20
+	tr33: cs = 30; goto _again
+	tr34: cs = 31; goto _again
+	tr35: cs = 32; goto _again
+	tr36: cs = 33; goto f10
+	tr37: cs = 34; goto _again
+	tr47: cs = 35; goto _again
+	tr49: cs = 36; goto _again
+	tr51: cs = 37; goto _again
+	tr53: cs = 38; goto _again
+	tr38: cs = 39; goto _again
 
-	f8: _acts = 5; goto execFuncs
-	f17: _acts = 7; goto execFuncs
-	f11: _acts = 9; goto execFuncs
-	f12: _acts = 11; goto execFuncs
-	f18: _acts = 13; goto execFuncs
-	f10: _acts = 15; goto execFuncs
-	f3: _acts = 17; goto execFuncs
-	f1: _acts = 19; goto execFuncs
+	f10: _acts = 5; goto execFuncs
+	f19: _acts = 7; goto execFuncs
+	f13: _acts = 9; goto execFuncs
+	f14: _acts = 11; goto execFuncs
+	f20: _acts = 13; goto execFuncs
+	f12: _acts = 15; goto execFuncs
+	f5: _acts = 17; goto execFuncs
+	f2: _acts = 19; goto execFuncs
 	f4: _acts = 21; goto execFuncs
-	f2: _acts = 23; goto execFuncs
-	f7: _acts = 25; goto execFuncs
-	f16: _acts = 27; goto execFuncs
-	f15: _acts = 29; goto execFuncs
-	f14: _acts = 31; goto execFuncs
-	f13: _acts = 33; goto execFuncs
-	f9: _acts = 35; goto execFuncs
-	f0: _acts = 37; goto execFuncs
+	f1: _acts = 23; goto execFuncs
+	f6: _acts = 25; goto execFuncs
+	f3: _acts = 27; goto execFuncs
+	f9: _acts = 29; goto execFuncs
+	f18: _acts = 31; goto execFuncs
+	f17: _acts = 33; goto execFuncs
+	f16: _acts = 35; goto execFuncs
+	f15: _acts = 37; goto execFuncs
+	f11: _acts = 39; goto execFuncs
+	f0: _acts = 41; goto execFuncs
 
 execFuncs:
 	_nacts = uint(_dw2md_actions[_acts]); _acts++
@@ -421,88 +466,98 @@ te = p+1
 // line 22 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, "======", "#",       itemHeading1}  }
+{ c <-item{ts, p, "======", "#",       itemHeading1}    }
 		case 4:
 // line 27 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, "**", "**",          itemBold}      }
+{ c <-item{ts, p, "**", "**",          itemBold}        }
 		case 5:
 // line 28 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, "//", "*",           itemItalic}    }
+{ c <-item{ts, p, "//", "*",           itemItalic}      }
 		case 6:
 // line 29 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, "__", "",            itemUnderline} }
+{ c <-item{ts, p, "__", "",            itemUnderline}   }
 		case 7:
 // line 30 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, "''", "`",           itemMonospace} }
+{ c <-item{ts, p, "''", "`",           itemMonospace}   }
 		case 8:
-// line 35 "scanner/dw_scanner.rl"
+// line 31 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, "<code>", "```",     itemStartCode} }
+{ c <-item{ts, p, "<del>", "~~",       itemStartDelete} }
 		case 9:
-// line 36 "scanner/dw_scanner.rl"
+// line 32 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, "</code>", "```",    itemEndCode}   }
+{ c <-item{ts, p, "</del>", "~~",      itemEndDelete}   }
 		case 10:
 // line 37 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, "<file>", "```",     itemStartFile} }
+{ c <-item{ts, p, "<code>", "```",     itemStartCode}   }
 		case 11:
 // line 38 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, "</file>", "```",    itemEndFile}   }
+{ c <-item{ts, p, "</code>", "```",    itemEndCode}     }
 		case 12:
 // line 39 "scanner/dw_scanner.rl"
 
 te = p+1
-{ c <-item{ts, p, string(data[p]), "", itemText}      }
+{ c <-item{ts, p, "<file>", "```",     itemStartFile}   }
 		case 13:
+// line 40 "scanner/dw_scanner.rl"
+
+te = p+1
+{ c <-item{ts, p, "</file>", "```",    itemEndFile}     }
+		case 14:
+// line 41 "scanner/dw_scanner.rl"
+
+te = p+1
+{ c <-item{ts, p, string(data[p]), "", itemText}        }
+		case 15:
 // line 23 "scanner/dw_scanner.rl"
 
 te = p
 p--
-{ c <-item{ts, p, "=====", "##",       itemHeading2}  }
-		case 14:
+{ c <-item{ts, p, "=====", "##",       itemHeading2}    }
+		case 16:
 // line 24 "scanner/dw_scanner.rl"
 
 te = p
 p--
-{ c <-item{ts, p, "====", "###",       itemHeading3}  }
-		case 15:
+{ c <-item{ts, p, "====", "###",       itemHeading3}    }
+		case 17:
 // line 25 "scanner/dw_scanner.rl"
 
 te = p
 p--
-{ c <-item{ts, p, "===", "####",       itemHeading4}  }
-		case 16:
+{ c <-item{ts, p, "===", "####",       itemHeading4}    }
+		case 18:
 // line 26 "scanner/dw_scanner.rl"
 
 te = p
 p--
-{ c <-item{ts, p, "==", "#####",       itemHeading5}  }
-		case 17:
-// line 39 "scanner/dw_scanner.rl"
+{ c <-item{ts, p, "==", "#####",       itemHeading5}    }
+		case 19:
+// line 41 "scanner/dw_scanner.rl"
 
 te = p
 p--
-{ c <-item{ts, p, string(data[p]), "", itemText}      }
-		case 18:
-// line 39 "scanner/dw_scanner.rl"
+{ c <-item{ts, p, string(data[p]), "", itemText}        }
+		case 20:
+// line 41 "scanner/dw_scanner.rl"
 
 p = (te) - 1
-{ c <-item{ts, p, string(data[p]), "", itemText}      }
-// line 506 "scanner/dw_scanner.go"
+{ c <-item{ts, p, string(data[p]), "", itemText}        }
+// line 561 "scanner/dw_scanner.go"
 		}
 	}
 	goto _again
@@ -518,7 +573,7 @@ _again:
 
 ts = 0
 
-// line 522 "scanner/dw_scanner.go"
+// line 577 "scanner/dw_scanner.go"
 		}
 	}
 
@@ -528,14 +583,14 @@ ts = 0
 	_test_eof: {}
 	if p == eof {
 		switch cs {
-		case 24:
-			goto tr32
-		case 25:
-			goto tr32
-		case 26:
-			goto tr32
-		case 27:
-			goto tr32
+		case 30:
+			goto tr39
+		case 31:
+			goto tr39
+		case 32:
+			goto tr39
+		case 33:
+			goto tr39
 		case 0:
 			goto tr0
 		case 1:
@@ -582,24 +637,36 @@ ts = 0
 			goto tr0
 		case 22:
 			goto tr0
+		case 23:
+			goto tr0
+		case 24:
+			goto tr0
+		case 25:
+			goto tr0
+		case 26:
+			goto tr0
+		case 27:
+			goto tr0
 		case 28:
-			goto tr32
-		case 29:
-			goto tr40
-		case 30:
-			goto tr42
-		case 31:
-			goto tr44
-		case 32:
-			goto tr46
-		case 33:
-			goto tr32
+			goto tr0
+		case 34:
+			goto tr39
+		case 35:
+			goto tr48
+		case 36:
+			goto tr50
+		case 37:
+			goto tr52
+		case 38:
+			goto tr54
+		case 39:
+			goto tr39
 	}
 	}
 
 	}
 
-// line 46 "scanner/dw_scanner.rl"
+// line 48 "scanner/dw_scanner.rl"
 
 
 	c <-item{0,0,"","",itemEOF}

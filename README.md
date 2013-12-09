@@ -18,11 +18,11 @@ dw2md is written in Go.
 * heading 1-5
 * bold, italic, underline, monospace
 * &lt;code&gt; and &lt;file&gt;
+* &lt;del&gt;
 
 ### Unsupported DokuWiki Syntax
 
 * subscript and superscript
-* &lt;del&gt;
 * footnotes
 * links and images
 * tables

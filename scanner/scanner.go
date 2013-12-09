@@ -17,6 +17,8 @@ const (
 	itemItalic
 	itemUnderline
 	itemMonospace
+	itemStartDelete
+	itemEndDelete
 	itemStartLink
 	itemEndLink
 	itemStartPic
@@ -73,7 +75,7 @@ func (md *markdown) processItem(i item) {
 		if md.checkStack(i) {
 			md.doc.WriteString(i.replString)
 		}
-	case itemBold, itemItalic, itemUnderline, itemMonospace, itemStartCode, itemEndCode, itemStartFile, itemEndFile:
+	case itemBold, itemItalic, itemUnderline, itemMonospace, itemStartCode, itemEndCode, itemStartFile, itemEndFile, itemStartDelete, itemEndDelete:
 		if !md.validContext(i) {
 			md.doc.WriteString(i.origString)
 			break

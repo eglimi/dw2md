@@ -5,11 +5,56 @@ import (
 	"testing"
 )
 
-func TestBasicFormatting(t *testing.T) {
-	inDoc := `**bold and //italic// and __underlined text
-with ''monospace'' mixed__ and nested**`
-	expected := `**bold and *italic* and underlined text
-with ` + "`" + `monospace` + "`" + ` mixed and nested**`
+func TestBold(t *testing.T) {
+	inDoc := `some **bold text** we have.`
+	expected := `some **bold text** we have.`
+	outDoc := ConvertDoc([]byte(inDoc))
+	if !bytes.Equal(outDoc, []byte(expected)) {
+		t.Fail()
+	}
+}
+
+func TestItalic(t *testing.T) {
+	inDoc := `some //italic text// we have.`
+	expected := `some *italic text* we have.`
+	outDoc := ConvertDoc([]byte(inDoc))
+	if !bytes.Equal(outDoc, []byte(expected)) {
+		t.Fail()
+	}
+}
+
+func TestUnderline(t *testing.T) {
+	inDoc := `some __underline text__ we have.`
+	expected := `some underline text we have.`
+	outDoc := ConvertDoc([]byte(inDoc))
+	if !bytes.Equal(outDoc, []byte(expected)) {
+		t.Fail()
+	}
+}
+
+func TestMonospace(t *testing.T) {
+	inDoc := `some ''monospace text'' we have.`
+	expected := `some ` + "`" + `monospace text` + "`" + ` we have.`
+	outDoc := ConvertDoc([]byte(inDoc))
+	if !bytes.Equal(outDoc, []byte(expected)) {
+		t.Fail()
+	}
+}
+
+func TestDelete(t *testing.T) {
+	inDoc := `some <del>strikethrough text</del> we have.`
+	expected := `some ~~strikethrough text~~ we have.`
+	outDoc := ConvertDoc([]byte(inDoc))
+	if !bytes.Equal(outDoc, []byte(expected)) {
+		t.Fail()
+	}
+}
+
+func TestNestedFormatting(t *testing.T) {
+	inDoc := `**bold and // italic// and __und-erlined text
+with ''monospace'' and <del>deleted </del> mixed__ and nested  .**`
+	expected := `**bold and * italic* and und-erlined text
+with ` + "`" + `monospace` + "`" + ` and ~~deleted ~~ mixed and nested  .**`
 	outDoc := ConvertDoc([]byte(inDoc))
 	if !bytes.Equal(outDoc, []byte(expected)) {
 		t.Fail()
