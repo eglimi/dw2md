@@ -54,4 +54,4 @@ Check `dw2md -help` for more information.
 
 ## Build Status
 
-https://travis-ci.org/eglimi/dw2md.png
+[![Build Status](https://travis-ci.org/eglimi/dw2md.png)](https://travis-ci.org/eglimi/dw2md)
